@@ -24,7 +24,7 @@ export default function ContactSection() {
           Get in Touch
         </h2>
         <p className="mx-auto max-w-lg text-muted-foreground text-balance">
-          Interested in connecting? Reach out via{" "}
+          I'm actively seeking Data Analyst and Business Intelligence roles. If you're building data-driven products and need someone who bridges analytics and strategy, reach out via{" "}
           <Link
             href="mailto:danielsantiagoguzman@gmail.com"
             className="text-primary hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
@@ -40,8 +40,7 @@ export default function ContactSection() {
           >
             LinkedIn
           </Link>
-          . Always happy to discuss analytics, business strategy, and new
-          opportunities.
+          .
         </p>
       </div>
     </div>

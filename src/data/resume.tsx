@@ -2,24 +2,35 @@ import { Icons } from "@/components/icons";
 import { HomeIcon } from "lucide-react";
 import { Python } from "@/components/ui/svgs/python";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
+import { RLang } from "@/components/ui/svgs/r-lang";
+import { Tableau } from "@/components/ui/svgs/tableau";
+import { PowerBI } from "@/components/ui/svgs/powerbi";
+import { Databricks } from "@/components/ui/svgs/databricks";
+import { GitHubIcon } from "@/components/ui/svgs/github-icon";
+import { AWS } from "@/components/ui/svgs/aws";
+import { Claude } from "@/components/ui/svgs/claude";
 
 export const DATA = {
   name: "Daniel Santiago Guzman",
   initials: "DSG",
-  url: "https://github.com/danielguzman01",
+  url: "https://daniel-portfolio-lake.vercel.app/",
   location: "Seattle, WA",
   locationLink: "https://www.google.com/maps/place/seattle",
   description:
-    "Business Analytics Graduate Student at UW Foster | Turning complex data into strategic decisions that drive measurable business impact.",
+    "MS Business Analytics candidate at UW Foster actively seeking Data Analyst and Business Intelligence roles. Bridging analytics and strategy to drive measurable business impact.",
   summary:
     "I'm a MS Business Analytics candidate at the **University of Washington Foster School of Business** (GPA: 3.85, Top 10%) with 3+ years of experience transforming data into business strategy. I've built ML models that identified **847 vulnerabilities across 50K+ endpoints**, generated **$672K in incremental revenue** through territory optimization, and automated reporting pipelines that save **1,200+ work hours annually**. My work spans predictive modeling, causal inference, and business intelligence — always focused on the question that matters most: *what should we do next?*",
-  avatarUrl: "/me.png",
+  avatarUrl: "https://avatars.githubusercontent.com/u/156631236?v=4",
   skills: [
     { name: "Python", icon: Python },
     { name: "SQL", icon: Postgresql },
-    { name: "R", icon: null },
-    { name: "Tableau", icon: null },
-    { name: "Power BI", icon: null },
+    { name: "R", icon: RLang },
+    { name: "Tableau", icon: Tableau },
+    { name: "Power BI", icon: PowerBI },
+    { name: "Databricks", icon: Databricks },
+    { name: "Git/GitHub", icon: GitHubIcon },
+    { name: "AWS", icon: AWS },
+    { name: "Claude Code", icon: Claude },
     { name: "XGBoost", icon: null },
     { name: "Random Forest", icon: null },
     { name: "K-means", icon: null },
@@ -35,9 +46,6 @@ export const DATA = {
     { name: "RAG", icon: null },
     { name: "Prompt Engineering", icon: null },
     { name: "OpenAI API", icon: null },
-    { name: "AWS", icon: null },
-    { name: "Databricks", icon: null },
-    { name: "Git/GitHub", icon: null },
     { name: "ETL Pipelines", icon: null },
     { name: "Plotly", icon: null },
     { name: "Seaborn", icon: null },
@@ -57,7 +65,7 @@ export const DATA = {
       },
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/danielguzman01",
+        url: "https://github.com/DanielSantiagoGuzman",
         icon: Icons.github,
         navbar: true,
       },
@@ -77,9 +85,9 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Business Data Analyst",
-      logoUrl: "",
+      logoUrl: "/re-systems-logo.png",
       start: "May 2024",
-      end: "Present",
+      end: "Feb 2026",
       description:
         "Reduced executive reporting cycles from 5 days to 4 hours by building 28-KPI dashboards (Tableau, Power BI) across $3.45M in projects. Built an ML vendor risk model (Random Forest) on 75K+ transactions to proactively flag supply chain risks. Automated ETL pipelines processing 2M+ daily records, cutting manual data prep by 65% (Python, PostgreSQL). Improved on-time delivery to 94% across 150+ projects.",
     },
@@ -89,7 +97,7 @@ export const DATA = {
       href: "https://www.connection.com/",
       location: "Remote",
       title: "Business Solutions Analyst",
-      logoUrl: "",
+      logoUrl: "/pc-connection-logo.jpeg",
       start: "Apr 2023",
       end: "May 2024",
       description:
@@ -101,7 +109,7 @@ export const DATA = {
       badges: [],
       location: "Cincinnati, OH",
       title: "Logistics Operations Analyst",
-      logoUrl: "",
+      logoUrl: "/tql-logo.png",
       start: "Jul 2022",
       end: "Mar 2023",
       description:
@@ -113,7 +121,7 @@ export const DATA = {
       school: "University of Washington, Foster School of Business",
       href: "https://foster.uw.edu/",
       degree: "MS Business Analytics | GPA: 3.85/4.0 (Top 10%) | Expected June 2026",
-      logoUrl: "",
+      logoUrl: "https://identity.uw.edu/images/uw-logo.png",
       start: "2025",
       end: "2026",
     },
@@ -121,7 +129,7 @@ export const DATA = {
       school: "University of Minnesota",
       href: "https://twin-cities.umn.edu/",
       degree: "BS Economics | Minor: Management & Statistics | May 2022",
-      logoUrl: "",
+      logoUrl: "https://1000logos.net/wp-content/uploads/2022/08/University-of-Minnesota-Logo.png",
       start: "2018",
       end: "2022",
     },
