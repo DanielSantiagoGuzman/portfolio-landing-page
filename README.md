@@ -1,4 +1,4 @@
-# Daniel Santiago Guzman: Portfolio Landing Page
+# Portfolio Landing Page
 
 Personal portfolio website showcasing analytics projects, work experience, and skills. Built for recruiters at top tech companies.
 
