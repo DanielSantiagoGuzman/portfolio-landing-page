@@ -19,6 +19,8 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
     <img
       src={src}
       alt={alt}
+      width={800}
+      height={192}
       className="w-full h-48 object-cover"
       onError={() => setImageError(true)}
     />
@@ -34,6 +36,7 @@ interface Props {
   link?: string;
   image?: string;
   video?: string;
+  badge?: string;
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -51,9 +54,25 @@ export function ProjectCard({
   link,
   image,
   video,
+  badge,
   links,
   className,
 }: Props) {
+  const media = video ? (
+    <video
+      src={video}
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-48 object-cover"
+    />
+  ) : image ? (
+    <ProjectImage src={image} alt={title} />
+  ) : (
+    <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-primary/5" />
+  );
+
   return (
     <div
       className={cn(
@@ -62,28 +81,19 @@ export function ProjectCard({
       )}
     >
       <div className="relative shrink-0">
-        <Link
-          href={href || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
-          {video ? (
-            <video
-              src={video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-48 object-cover"
-            />
-          ) : image ? (
-            <ProjectImage src={image} alt={title} />
-          ) : (
-            <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-primary/5" />
-          )}
-        </Link>
-        {links && links.length > 0 && (
+        {href ? (
+          <Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            {media}
+          </Link>
+        ) : (
+          <div className="block">{media}</div>
+        )}
+        {links && links.length > 0 ? (
           <div className="absolute top-2 right-2 flex flex-wrap gap-2">
             {links.map((link, idx) => (
               <Link
@@ -103,7 +113,16 @@ export function ProjectCard({
               </Link>
             ))}
           </div>
-        )}
+        ) : badge ? (
+          <div className="absolute top-2 right-2">
+            <Badge
+              className="text-xs bg-muted text-muted-foreground border border-border"
+              variant="secondary"
+            >
+              {badge}
+            </Badge>
+          </div>
+        ) : null}
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-2">
@@ -111,15 +130,17 @@ export function ProjectCard({
             <h3 className="font-semibold">{title}</h3>
             <time className="text-xs text-muted-foreground">{dates}</time>
           </div>
-          <Link
-            href={href || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
-            aria-label={`Open ${title}`}
-          >
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
-          </Link>
+          {href && (
+            <Link
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+              aria-label={`Open ${title}`}
+            >
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </Link>
+          )}
         </div>
         <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
           <Markdown>{description}</Markdown>
